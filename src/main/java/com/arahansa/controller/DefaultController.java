@@ -23,7 +23,7 @@ public class DefaultController {
     public String helloAdmin() {
         Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication().getAuthorities();
         String roles = authorities.stream().map(Object::toString).collect(Collectors.joining(","));
-        return "hello admin?~~ : "+roles;
+        return "hello admin?~~last ? : "+roles;
     }
 
     @GetMapping("/admin")
