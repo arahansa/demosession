@@ -25,7 +25,11 @@ jar {
 	baseName 'application'
 }
 
-
+task print() {
+	doLast{
+		println "github push complete"
+	}
+}
 
 
 dependencies {
