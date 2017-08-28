@@ -17,13 +17,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
           .inMemoryAuthentication()
           .withUser("admin").password("password").roles("ADMIN","TEST");
     }
- 
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-          .httpBasic().and()
           .authorizeRequests()
-          .antMatchers("/").hasRole("ADMIN")
-          .anyRequest().authenticated();
+          .antMatchers("/admin").hasRole("ADMIN")
+          .anyRequest().permitAll();
+
+        http.formLogin();
     }
 }

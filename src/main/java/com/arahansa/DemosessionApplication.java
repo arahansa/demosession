@@ -10,5 +10,4 @@ public class DemosessionApplication {
 		SpringApplication.run(DemosessionApplication.class, args);
 	}
 
-
 }
