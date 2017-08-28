@@ -21,6 +21,10 @@ repositories {
 	mavenCentral()
 }
 
+jar {
+	baseName 'application'
+}
+
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-security')
@@ -28,10 +32,8 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-web')
 
-	/*
 	compile('org.springframework.session:spring-session')
 	compile('org.springframework.boot:spring-boot-starter-data-redis')
-	*/
 
 	runtime('mysql:mysql-connector-java')
 	compileOnly('org.projectlombok:lombok')

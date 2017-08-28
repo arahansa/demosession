@@ -7,19 +7,20 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
-/*import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
+import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.session.data.redis.config.ConfigureRedisAction;
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
-import org.springframework.session.web.context.AbstractHttpSessionApplicationInitializer;*/
+import org.springframework.session.web.context.AbstractHttpSessionApplicationInitializer;
+import redis.clients.jedis.JedisPoolConfig;
 
 import javax.annotation.PostConstruct;
 
 @Slf4j
-// @Configuration
-// @EnableRedisHttpSession
-public class SessionConfig { //extends AbstractHttpSessionApplicationInitializer {
+@Configuration
+@EnableRedisHttpSession
+public class SessionConfig extends AbstractHttpSessionApplicationInitializer {
 
-    /*@Autowired
+    @Autowired
     Environment env;
 
     @PostConstruct
@@ -43,6 +44,7 @@ public class SessionConfig { //extends AbstractHttpSessionApplicationInitializer
         jf.setHostName(host);
         jf.setPort(6379);
         jf.setTimeout(2000);
+        jf.setUsePool(true);
         return jf;
-    }*/
+    }
 }
